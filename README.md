@@ -225,11 +225,11 @@ Pobranie i instlacja Yaourt:
 
 ## EXTRA, pakiety w mojej opini warte do zainstalowania:
 
-*odtwarzacz audio/video: VLC
-*bardzo intuicyjny graficzny menadżer plików: nemo
-*proste montowanie urzadzen z andoidem (jeżeli uzywamy menadżera plików opartego na gnome np nemo): gvfs-mtp
-*montowanie dysków ntfs: ntfs-3g
-*kodeki:
+* odtwarzacz audio/video: VLC
+* bardzo intuicyjny graficzny menadżer plików: nemo
+* proste montowanie urzadzen z andoidem (jeżeli uzywamy menadżera plików opartego na gnome np nemo): gvfs-mtp
+* montowanie dysków ntfs: ntfs-3g
+* kodeki:
 a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
-*narzędzie do screenow: spectacle
-*W mojej opini najlepszy ciemny styl dla gtk (swietnie wspolpracuje z xfce): numix-gtk-theme
+* narzędzie do screenow: spectacle
+* W mojej opini najlepszy ciemny styl dla gtk (swietnie wspolpracuje z xfce): numix-gtk-theme
