@@ -32,7 +32,7 @@ Partycja home (jeżeli taką utworzyliśmy):
 
     mkfs.ext4 /dev/sda4
 
-## 3 Uruchamiany swap i monutujemy partycje
+## 3 Uruchamiany swap i montujemy partycje
 UWAGA: tutaj bardzo ważna jest kolejność operacji,
 operacja muszą być wykonywane dokłądnie w tej samej kolejności co podano niżej.
 
@@ -130,7 +130,7 @@ Edytujemy plik:
 
     nano /etc/sudoers
 
-Szukamy linijki:
+Szukamy linii:
 
     ALL=(ALL) ALL
 
