@@ -1,10 +1,10 @@
-#Arch Linux with EFI boot installation guide in Polish
+# Arch Linux with EFI boot installation guide in Polish
 
 I am writing this guide mostly for my own usage.
 If you are looking for english version please contact me.
 I will do my best to provide it.
 
-##1 Partycjonowanie dysku
+## 1 Partycjonowanie dysku
 
 * przy użyciu linux live CD (np. Puppy Live CD) i gparted. Polecam tą wersje mniej zaawansowanym użytkownikom.
 * wersja tekstowa np przy użyciu programu cfdisk.
@@ -15,7 +15,7 @@ I will do my best to provide it.
 * Partycja root (sda3): rozmiar według uznania 50GB, jeżeli jest to system do pracy.
 * Partycja home (sda4, opcjonalna): rozmiar wedlug uznania.
 
-##2 Tworzymy systemy pilków, uruchamiany swap
+## 2 Tworzymy systemy pilków, uruchamiany swap
 Partycja boot (flagi Boot, esp, mkfs.msdos może być niedostępny, znajduje się w pakiecie dosfstools):
 
     mkfs.msdos -F 32 /dev/sda1
@@ -32,7 +32,7 @@ Partycja home (jeżeli taką utworzyliśmy):
 
     mkfs.ext4 /dev/sda4
 
-##3 Uruchamiany swap i monutujemy partycje
+## 3 Uruchamiany swap i monutujemy partycje
 UWAGA: tutaj bardzo ważna jest kolejność operacji,
 operacja muszą być wykonywane dokłądnie w tej samej kolejności co podano niżej.
 
@@ -54,31 +54,31 @@ Jeżeli przygotowaliśmy partycje home:
     mkdir /mnt/home
     mount /dev/sda4 /mnt/home
 
-##4 Automatyczna konfiguracja sieci
+## 4 Automatyczna konfiguracja sieci
 
     dhcpcd
 
-##5 Instalacja podstawowego systemu
+## 5 Instalacja podstawowego systemu
 
     pacstrap /mnt base base-devel
 
-##6 generujemy fstab
+## 6 generujemy fstab
 
     genfstab /mnt >> /mnt/etc/fstab
 
-##7 przechodzimy do zainstalowanego systemu
+## 7 przechodzimy do zainstalowanego systemu
 
     arch-chroot /mnt
 
-##8 Nadajemy nazwe naszemu komputerowi
+## 8 Nadajemy nazwe naszemu komputerowi
 
     echo nazwakomputera > /etc/hostname
 
-##9 Konfigurujemy strefe czasową
+## 9 Konfigurujemy strefe czasową
 
     ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 
-##10 Dodajemy locale
+## 10 Dodajemy locale
 
 Otwieramy plik w edytorze:
 
@@ -110,7 +110,7 @@ Wispujemy do niego:
 
 Zapisujemy.
 
-##11 Tworzomy nowego użytkownika i hasła
+## 11 Tworzomy nowego użytkownika i hasła
 
 Nadajemy hasło użytkownikowi root:
 
@@ -124,7 +124,7 @@ Tworzymy hasło dla nowego uzytkownika:
 
     passwd nazwausera
 
-##12 Nadajemy naszemu użytkownikowi prawo do sudo
+## 12 Nadajemy naszemu użytkownikowi prawo do sudo
 
 Edytujemy plik:
 
@@ -138,11 +138,11 @@ Pod nią dodajemy następującą:
 
     nazwausera ALL=(ALL) ALL
 
-##13 Inicjalizacja systemu
+## 13 Inicjalizacja systemu
 
     mkinitcpio -p linux
 
-##14 Konfiguracja efi boot
+## 14 Konfiguracja efi boot
 
 X i Y dobieramy tak aby reprezentowały naszą partycje boot (np: /dev/sda1 -p 1)
 Wpis root=/dev/sdb4 zamieniamy na reprezentujący naszą partycje root
@@ -161,7 +161,7 @@ Po poprawnym uruchomieniu się systemu logujemy się na naszego użytkownika i p
 
     dhcpcd
 
-##15 instalacja środowiska
+## 15 instalacja środowiska
 
 Na początku sterownik grafiki:
 
@@ -190,11 +190,11 @@ Alsa+PulseAudio:
 
 Przykładowe środowiska graficzne cinnamon, xfce4
 
-##16 Manadzer logowania
+## 16 Manadzer logowania
 
     pacman -S lightdm lightdm-gtk-greeter
 
-##17 Wyłączamy i włączamy demony:
+## 17 Wyłączamy i włączamy demony:
 
     sudo systemctl disable dhcpcd
     sudo systemctl disable iptablets.service
@@ -206,7 +206,7 @@ W tym momencie można zrestartować system i sprawdzić czy środowisko graficzn
 
     reboot
 
-##18 Instalacja menadżera pakietów AUR:
+## 18 Instalacja menadżera pakietów AUR:
 
 Pobieranie i instalacja package-query:
 
@@ -223,7 +223,7 @@ Pobranie i instlacja Yaourt:
     sudo pacman -U yaourt*.pkg.tar.xz
 
 
-##EXTRA, pakiety w mojej opini warte do zainstalowania:
+## EXTRA, pakiety w mojej opini warte do zainstalowania:
 
 VLC – odtwarzacz audio/video
 android-file-transfer – proste montowanie urzadzen z andoidem
