@@ -118,7 +118,7 @@ Nadajemy hasło użytkownikowi root:
 
 Tworzymy nowego użytkownika:
 
-    -m -g users -G audio,disk,network,optical,power,storage,video,rfkill,wheel -s /bin/bash nazwausera
+    useradd -m -g users -G audio,disk,network,optical,power,storage,video,rfkill,wheel -s /bin/bash nazwausera
 
 Tworzymy hasło dla nowego uzytkownika:
 
@@ -207,6 +207,10 @@ W tym momencie można zrestartować system i sprawdzić czy środowisko graficzn
     reboot
 
 ## 18 Instalacja menadżera pakietów AUR:
+
+Instalacja niezbędnych pakietów:
+
+    sudo pacman -S yajl
 
 Pobieranie i instalacja package-query:
 
