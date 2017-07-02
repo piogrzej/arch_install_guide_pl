@@ -9,10 +9,10 @@ I will do my best to provide it.
 * przy użyciu linux live CD (np. Puppy Live CD) i gparted. Polecam tą wersje mniej zaawansowanym użytkownikom.
 * wersja tekstowa np przy użyciu programu cfdisk.
 * Musimy stworzyć minimum dwie partcje. W moim odczuciu najlepiej 3 lub 4 w przypadku gdy mamy mało pamięci RAM.
-* Tablica pratycji: msdos
-* Partcja boot (sda1): +-1024MB
-* Partycja swap (sda2, opcjonalna): ROZMIAR ZALEŻNY OD ILOŚĆI RAMU W MASZYNIE.
-* Partycja root (sda3): rozmiar według uznania 50GB, jeżeli jest to system do pracy.
+* Tablica pratycji: gpt
+* Partcja boot (sda1): +-512MB
+* Partycja swap (sda2, opcjonalna): ROZMIAR ZALEŻNY OD ILOŚĆI RAMU W MASZYNIE, JEJ ZASTOSOWAŃ ITD.
+* Partycja root (sda3): rozmiar według uznania, 50GB minimum, jeżeli jest to system do pracy.
 * Partycja home (sda4, opcjonalna): rozmiar wedlug uznania.
 
 ## 2 Tworzymy systemy pilków, uruchamiany swap
@@ -34,7 +34,7 @@ Partycja home (jeżeli taką utworzyliśmy):
 
 ## 3 Uruchamiany swap i montujemy partycje
 UWAGA: tutaj bardzo ważna jest kolejność operacji,
-operacja muszą być wykonywane dokłądnie w tej samej kolejności co podano niżej.
+operacja muszą być wykonywane dokładnie w tej samej kolejności co podano niżej.
 
 jeżeli zrobiliśmy partycje swap to ją uruchamiamy:
 
@@ -62,11 +62,11 @@ Jeżeli przygotowaliśmy partycje home:
 
     pacstrap /mnt base base-devel
 
-## 6 generujemy fstab
+## 6 Generujemy fstab
 
     genfstab /mnt >> /mnt/etc/fstab
 
-## 7 przechodzimy do zainstalowanego systemu
+## 7 Przechodzimy do zainstalowanego systemu
 
     arch-chroot /mnt
 
@@ -104,7 +104,7 @@ Jeżeli chcemy spolszyczć system (opcjonalne) to edytujemy plik:
 
     nano /etc/locale.conf
 
-Wispujemy do niego:
+Wpisujemy do niego:
 
     LANG=pl_PL.UTF-8
 
@@ -161,16 +161,16 @@ Po poprawnym uruchomieniu się systemu logujemy się na naszego użytkownika i p
 
     dhcpcd
 
-## 15 instalacja środowiska
+## 15 Instalacja środowiska
 
 Na początku sterownik grafiki:
 
     sudo pacman -S sterownik_karty
 
 Sterowniki:
-Nvidia GPU → nvidia
-AMD/ATI GPU → xf86-video-amdgpu
-Intel → mesa
+* Nvidia GPU → nvidia
+* AMD/ATI GPU → xf86-video-amdgpu
+* Intel → mesa
 
 czcionki:
 
@@ -215,7 +215,7 @@ Instalacja niezbędnych pakietów:
 Pobieranie i instalacja package-query:
 
     wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
-    tar xfz package-query.tar.gz
+    tar xzf package-query.tar.gz
     cd package-query && makepkg
     sudo pacman -U package-query*.pkg.tar.xz
 
@@ -227,7 +227,7 @@ Pobranie i instlacja Yaourt:
     sudo pacman -U yaourt*.pkg.tar.xz
 
 
-## EXTRA, pakiety w mojej opini warte do zainstalowania:
+## EXTRA, pakiety w mojej opini warte uwagi:
 
 * odtwarzacz audio/video: VLC
 * bardzo intuicyjny graficzny menadżer plików: nemo
