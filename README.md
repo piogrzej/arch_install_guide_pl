@@ -11,8 +11,8 @@ I will do my best to provide it.
 * Musimy stworzyć minimum dwie partcje. W moim odczuciu najlepiej 3 lub 4 w przypadku gdy mamy mało pamięci RAM.
 * Tablica pratycji: gpt
 * Partcja boot (sda1): +-512MB
-* Partycja swap (sda2, opcjonalna): ROZMIAR ZALEŻNY OD ILOŚĆI RAMU W MASZYNIE, JEJ ZASTOSOWAŃ ITD.
-* Partycja root (sda3): rozmiar według uznania, 50GB minimum, jeżeli jest to system do pracy.
+* Partycja swap (sda2, opcjonalna): ROZMIAR ZALEŻNY OD ILOŚCI RAMU W MASZYNIE, JEJ ZASTOSOWAŃ ITD.
+* Partycja root (sda3): rozmiar według uznania, 50GB minimum jeżeli jest to system do pracy.
 * Partycja home (sda4, opcjonalna): rozmiar wedlug uznania.
 
 ## 2 Tworzymy systemy pilków, uruchamiany swap
