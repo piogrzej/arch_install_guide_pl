@@ -84,6 +84,10 @@ Otwieramy plik w edytorze:
 
     nano /etc/locale.gen
 
+Jezeli nano nie zostalo znalezione, musimy je zainstalowac:
+
+    pacman -S nano
+
 Szukamy wpisów:
 
     en_US.UTF-8 UTF-8
@@ -132,7 +136,7 @@ Edytujemy plik:
 
 Szukamy linii:
 
-    ALL=(ALL) ALL
+    root ALL=(ALL) ALL
 
 Pod nią dodajemy następującą:
 
