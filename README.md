@@ -150,6 +150,13 @@ Wpis root=/dev/sdb4 zamieniamy na reprezentujący naszą partycje root
     pacman -S efibootmgr
     efibootmgr -d /dev/sdX -p Y -c -L "Arch Linux" -l /vmlinuz-linux -u "root=/dev/sdb4 rw initrd=/initramfs-linux.img"
 
+W przypadku maszyny wirtualnej VirtualBox zamiast powyzszych komend nalezy
+utworzyc plik /boot/startup.nsh i zapisac w nim:
+
+    nshlinuz-linux rw root=/dev/sdb4 initrd=\initramfs-linux.img
+
+Wpis /dev/sdb4 nalezy zmienic na partycje root.
+
 W tym momencie można zrestartować system i sprawdzić czy bootwanie działa:
 
     exit
@@ -237,3 +244,7 @@ Pobranie i instlacja Yaourt:
 a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
 * narzędzie do screenow: spectacle
 * W mojej opini najlepszy ciemny styl dla gtk (swietnie wspolpracuje z xfce): numix-gtk-theme
+* Wlaczenie koloryzowania skladni w nano
+
+    mkdir ~/.config/nano
+    echo 'include "/usr/share/nano/*.nanorc"' > ~/.config/nano/nanorc
