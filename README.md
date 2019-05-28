@@ -153,7 +153,7 @@ Wpis root=/dev/sdb4 zamieniamy na reprezentujący naszą partycje root
 W przypadku maszyny wirtualnej VirtualBox zamiast powyzszych komend nalezy
 utworzyc plik /boot/startup.nsh i zapisac w nim:
 
-    nshlinuz-linux rw root=/dev/sdb4 initrd=\initramfs-linux.img
+    vnlinuz-linux rw root=/dev/sdb4 initrd=\initramfs-linux.img
 
 Wpis /dev/sdb4 nalezy zmienic na partycje root.
 
